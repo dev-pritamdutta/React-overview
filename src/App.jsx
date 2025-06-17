@@ -1,19 +1,14 @@
 import React, { useState } from "react";
 
 const App = () => {
-  const [mymoney, setMymoney] = useState(100);
 
-  const handleMoney = () => {
-    setMymoney(mymoney + 100);
-    console.log("Money updated:", mymoney);
-  };
+const [text, setText] = useState("");
+
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
-      <h3>my money: {mymoney}</h3>
-      <button onClick={() => {handleMoney()}} className="p-3 bg-amber-200 my-16">
-        Add money
-      </button>
+    <div className="p-16 h-screen bg-gray-100">
+      <input onChange={(e) => {setText(e.target.value)}} type="text" value={text} className="border border-gray-300 rounded-md p-2" placeholder="type your text" />
+      <h3 className="text-xl font-medium ">you typed: {text} </h3>
     </div>
   );
 };
